@@ -13,7 +13,7 @@ class Missed extends React.Component {
                 <div key={i} className="box-three">
                     <div className="box-row">
                         <div className="box-cell">
-                            <img src={x.image} className="text-wrap imgSize" alt="logo" />
+                            <img src={x.image} className="imgSize3" alt="logo" />
                             <div className="top">
                                 <h4> {x.title} </h4>
                                 <p> {x.description} </p>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import bookmark from './logo.svg';
 
 class ForYou extends Component {
     constructor(props) {
@@ -13,7 +14,7 @@ class ForYou extends Component {
                 <div key={i} className="box-two">
                     <div className="box-row">
                         <div className="box-cell">
-                            <img src={x.image} className="text-wrap imgSize" alt="logo" />
+                            <img src={x.image} className="text-wrap imgSize2" alt="logo" />
                             <div className="top">
                                 <h4> {x.title} </h4>
                                 <p> {x.description} </p>
@@ -23,6 +24,7 @@ class ForYou extends Component {
                                 <span> {x.author.name} <br />
                                     {(String(new Date(x.postedDate)).slice(4, 10))}  - {x.minutesToRead} read
                                 </span>
+                                <img src={bookmark} className="imgBk" />
                             </div>
                         </div>
                     </div>

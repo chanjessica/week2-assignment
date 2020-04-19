@@ -4,21 +4,53 @@ body{
   font-family: sans-serif;
   background-color: plum;
 }
+a:link {
+  color: black;
+  text-decoration: none;
+}
+.member {
+  border: 4px double green;
+}
 h1:after{
   content:' ';
   display: block;
   border:2px solid white;
 }
-span{
+ul li{
+  display: inline;
+  padding: 0;
+  margin-left: 0;
+}
+strong {
+  text-align: right;
+  color: red;
+  font-size: 200%;
+}
+span {
+  font-weight: bold;
+  /* font-size: 80%; */
+}
+.bottom *{
   font-size: 80%;
 }
 .text-wrap{
   float: left;
   margin: 10px ;
 }
-.imgSize{
+.imgBk{
+  margin-left: 90%;
+  width: 30px;
+  height: 30px;
+}
+
+.imgSize2{
   width: 50%;
   height: 200px;
+  display: block;
+}
+.imgSize3{
+  width: 80%;
+  height: 100px;
   display: block;
 }
 .flex-container {
@@ -37,7 +69,7 @@ span{
 }
 .box-three{
   font-size: 80%;
-  width: 33%;
+  width: 30%;
   display: table;
   border: 1px solid white;
 }
