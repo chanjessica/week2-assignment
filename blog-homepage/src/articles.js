@@ -4,9 +4,12 @@ import bookmark from './logo.svg';
 import PropTypes from 'prop-types';
 
 function Articles({ uData, styleClass }) {
-    // const getLink = (ref) => {
-    //     alert(ref)
-    // }
+    const getLink = (ref) => {
+        return (e) => {
+            e.preventDefault();
+            alert(ref);
+        }
+    }
 
     return (
         uData.map((x, i) =>
@@ -14,16 +17,15 @@ function Articles({ uData, styleClass }) {
                 <div className="box-row">
                     <div className="box-cell">
                         <div>
-                            <img src={x.image} className="text-wrap imgSize2" alt="Title" />
+                            <img onClick={getLink(x.link)} src={x.image} className="text-wrap imgSize2" alt="Title" />
                         </div>
                         <div className="top"  >
                             <p style={{ fontSize: '10px' }}>{x.hasAudioAvailable ? 'Audio available' : null}
                                 <strong style={{ fontSize: '2em', textAlign: "right" }}>{x.memberPreview ? '*' : null}</strong>
                             </p>
-                            {/* <h4 onClick={getLink(x.link)}> {x.title} </h4> */}
-                            {/* <h4 onClick={() => console.log({ x.link })}> {x.title} </h4> */}
-                            <h4><a href={x.link}> {x.title}</a> </h4>
-                            <p> {x.description} </p>
+                            <h4 onClick={getLink(x.link)}> {x.title} </h4>
+                            {/* <h4><a href={x.link}> {x.title}</a> </h4> */}
+                            <p onClick={getLink(x.link)}> {x.description} </p>
                         </div>
                         <div className="bottom">
                             <Bio authorInfo={x.author} />
@@ -40,7 +42,14 @@ function Articles({ uData, styleClass }) {
 }
 
 Articles.propTypes = {
-    uData: PropTypes.array.isRequired,
+    uData: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+        link: PropTypes.string.isRequired,
+        postedDate: PropTypes.string.isRequired,
+        minutesToRead: PropTypes.number.isRequired,
+    }).isRequired,
     styleClass: PropTypes.string.isRequired
 }
 
