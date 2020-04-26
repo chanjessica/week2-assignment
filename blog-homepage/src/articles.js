@@ -42,14 +42,14 @@ function Articles({ uData, styleClass }) {
 }
 
 Articles.propTypes = {
-    uData: PropTypes.shape({
+    uData: PropTypes.arrayOf(PropTypes.shape({
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
         image: PropTypes.string.isRequired,
         link: PropTypes.string.isRequired,
         postedDate: PropTypes.string.isRequired,
         minutesToRead: PropTypes.number.isRequired,
-    }).isRequired,
+    })).isRequired,
     styleClass: PropTypes.string.isRequired
 }
 
