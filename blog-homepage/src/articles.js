@@ -47,6 +47,11 @@ Articles.propTypes = {
         description: PropTypes.string.isRequired,
         image: PropTypes.string.isRequired,
         link: PropTypes.string.isRequired,
+        author: PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            image: PropTypes.string.isRequired,
+            isMediumMember: PropTypes.bool.isRequired
+        }).isRequired,
         postedDate: PropTypes.string.isRequired,
         minutesToRead: PropTypes.number.isRequired,
     })).isRequired,

@@ -12,7 +12,11 @@ function Bio({ authorInfo }) {
 }
 
 Bio.propTypes = {
-    authorInfo: PropTypes.object.isRequired
+    authorInfo: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+        isMediumMember: PropTypes.bool.isRequired
+    }).isRequired
 }
 
 export default Bio;
